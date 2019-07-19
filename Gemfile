@@ -17,6 +17,7 @@ gem 'slim'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'bcrypt'
+gem 'pry-rails'
 
 group :development, :test do
   gem 'rspec-rails'

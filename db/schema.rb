@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_19_093947) do
+ActiveRecord::Schema.define(version: 2019_07_19_093609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_07_19_093947) do
   create_table "classrooms", force: :cascade do |t|
     t.bigint "teachers_id"
     t.bigint "students_id"
+    t.string "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["students_id"], name: "index_classrooms_on_students_id"
@@ -25,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_07_19_093947) do
   end
 
   create_table "marks", force: :cascade do |t|
-    t.integer "mark"
+    t.string "mark", array: true
     t.bigint "student_id"
     t.bigint "subject_id"
     t.datetime "created_at", null: false
@@ -34,22 +35,11 @@ ActiveRecord::Schema.define(version: 2019_07_19_093947) do
     t.index ["subject_id"], name: "index_marks_on_subject_id"
   end
 
-  create_table "parents", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "phone_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "students", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "parents_id"
-    t.index ["parents_id"], name: "index_students_on_parents_id"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -61,14 +51,9 @@ ActiveRecord::Schema.define(version: 2019_07_19_093947) do
   create_table "teachers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "phone_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
+    t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
