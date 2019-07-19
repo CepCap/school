@@ -10,36 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_19_093609) do
+ActiveRecord::Schema.define(version: 2019_07_19_132139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "classrooms", force: :cascade do |t|
-    t.bigint "teachers_id"
-    t.bigint "students_id"
+    t.bigint "teacher_id"
     t.string "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["students_id"], name: "index_classrooms_on_students_id"
-    t.index ["teachers_id"], name: "index_classrooms_on_teachers_id"
+    t.index ["teacher_id"], name: "index_classrooms_on_teacher_id"
   end
 
-  create_table "marks", force: :cascade do |t|
-    t.string "mark", array: true
+  create_table "journals", force: :cascade do |t|
     t.bigint "student_id"
     t.bigint "subject_id"
+    t.string "marks", array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["student_id"], name: "index_marks_on_student_id"
-    t.index ["subject_id"], name: "index_marks_on_subject_id"
+    t.index ["student_id"], name: "index_journals_on_student_id"
+    t.index ["subject_id"], name: "index_journals_on_subject_id"
   end
 
   create_table "students", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.bigint "classroom_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["classroom_id"], name: "index_students_on_classroom_id"
   end
 
   create_table "subjects", force: :cascade do |t|
