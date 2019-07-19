@@ -1,24 +1,9 @@
-# README
+# School project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+###Учебный проект стажировки Uchi.ru с использованием книги Майкла Хартла
 
-Things you may want to cover:
+Задача сделать интерактивный журнал для учителей
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Список учеников
+* Журналы по всем предметам
+* Успеваемость учеников
