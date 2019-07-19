@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Journal, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it { should respond_to(:student) }
+  it { should respond_to(:subject) }
+  it { should respond_to(:marks) }
+
 end

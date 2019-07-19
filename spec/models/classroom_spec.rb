@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Classroom, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it { should respond_to(:students) }
+  it { should respond_to(:teacher) }
+  it { should respond_to(:grade) }
 end
