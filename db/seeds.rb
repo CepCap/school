@@ -18,7 +18,7 @@ male_names = %w[Василий Александр Андрей Вадим]
 surnames = %w[Иванов Сидоров Кузнецов Воронов]
 genders = %w[m f]
 
-35.times do
+35.times do 
   gender = genders.sample
   if gender == 'm'
     student = Student.create(first_name: male_names.sample,
