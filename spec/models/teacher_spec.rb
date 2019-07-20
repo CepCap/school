@@ -10,5 +10,7 @@ RSpec.describe Teacher, type: :model do
   it { should respond_to(:classrooms) }
   it { should respond_to(:students) }
 
+  it { should respond_to(:password) }
+  it { should respond_to(:password_confirmation) }
 
 end
