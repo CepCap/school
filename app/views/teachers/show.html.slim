@@ -1,1 +1,5 @@
-p Hi
+.offset-md-3
+  .col-md-6
+    h5 style='margin-top: 10px'= "#{@teacher.first_name} #{@teacher.last_name}"
+    p = "Email: #{@teacher.email}"
+    p = "Номер телефона: #{@teacher.phone_number}"
