@@ -1,6 +1,6 @@
 .row.bg-info style='height: 5vh;'
   .col-md-3.text-center
-    = link_to 'Students list', root_path, class: 'text-dark'
+    = link_to 'Students list', students_path, class: 'text-dark'
   .offset-md-6
   .col-md-3.text-center
-    = link_to 'Teachers list', '#', class: 'text-dark'
+    = link_to 'Log out', logout_path, method: :delete, class: 'text-dark'

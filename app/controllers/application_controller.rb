@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_teacher
 
-  def authenticate_user!
+  def authenticate_teacher!
    redirect_to '/login' unless current_teacher
   end
 end
