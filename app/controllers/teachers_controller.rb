@@ -1,22 +1,20 @@
 class TeachersController < ApplicationController
+  before_action :find_teachers, only: :index
+  before_action :find_teacher, only: :show
+
   def index
   end
 
   def show
   end
 
-  def new
+  private
+
+  def find_teachers
+    @teachers = Teacher.all
   end
 
-  def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
+  def find_teacher
+    @teacher = Teacher.find(params[:id])
   end
 end
