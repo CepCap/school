@@ -3,6 +3,6 @@ class JournalsController < ApplicationController
 
   def index
     @student = Student.find(params[:student_id])
-    @journals = Journal.where(student_id: @student.id)
+    @journals = Journal.includes(:subject).where(student_id: @student.id)
   end
 end
