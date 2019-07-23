@@ -1,0 +1,5 @@
+.offset-md-2.row
+  .col-md-3.h5= "#{student.id}. #{student.first_name} #{student.last_name}"
+  .col-md-3.text-right data-perfomance="#{student.total_median}"
+    = "Общая успеваемость: #{student.total_median}"
+  .col-md-3.text-right = link_to 'Все оценки', student_journals_path(student)

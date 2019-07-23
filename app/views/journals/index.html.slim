@@ -1,0 +1,7 @@
+.offset-md-2
+  h2= "#{@student.first_name} #{@student.last_name} - #{@student.perfomance_name}"
+  h4= "Место в рейтинге успеваемости: #{@student.perfomance_position}"
+  h4 Оценки по предметам:
+  .col-md-6
+    = render @journals
+  h2 style='margin-bottom: 10vh'= "Общая средняя оценка: #{@student.total_median}"

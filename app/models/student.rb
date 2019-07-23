@@ -26,6 +26,11 @@ class Student < ApplicationRecord
     end
   end
 
+  def perfomance_position
+    student_medians = Student.all.map { |s| s.total_median }
+    student_medians.sort.reverse.find_index { |el| el == self.total_median } + 1
+  end
+
   def total_median
     all_marks = Journal.where(student_id: self.id).pluck(:marks).flatten.map(&:to_i)
     size = all_marks.size

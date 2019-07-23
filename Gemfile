@@ -17,7 +17,6 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'bcrypt'
 gem 'pry-rails'
-gem 'octicons'
 
 group :development, :test do
   gem 'rspec-rails'
